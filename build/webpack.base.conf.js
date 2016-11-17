@@ -41,6 +41,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.pug$/,
+        loader: 'pug-loader'
+      },
+      {
         test: /\.js$/,
         loader: 'eslint',
         include: projectRoot,
