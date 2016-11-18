@@ -23,7 +23,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     test: async (state) => {
-      const Data = await axios.get('http://127.0.0.1:41893/room/test')
+      const Data = await axios.get('http://115.159.217.96:41893/room/test')
       state.list = Action.DataToList(Data.data)
 
       state.data = Data.data

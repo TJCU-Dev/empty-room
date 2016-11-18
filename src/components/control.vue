@@ -74,7 +74,7 @@ export default {
       console.log(store.state.jie)
     },
     search () {
-      axios.post('http://127.0.0.1:41893/room', {
+      axios.post('http://115.159.217.96:41893/room', {
         lou: this.lou,
         week: this.xinqi,
         jie: this.jie,
