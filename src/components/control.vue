@@ -22,6 +22,19 @@ mu-paper#control
         mu-menu-item(value="0" title="无课")
         mu-menu-item(value="1" title="有课")
     mu-flexbox-item
+      mu-select-field(label="楼层" v-model="ceng" @change='cengchange')
+        mu-menu-item(value="0" title="全部")
+        mu-menu-item(value="1" title="一楼")
+        mu-menu-item(value="2" title="二楼")
+        mu-menu-item(value="3" title="三楼")
+        mu-menu-item(value="4" title="四楼")
+        mu-menu-item(value="5" title="五楼")
+        mu-menu-item(value="6" title="六楼")
+        mu-menu-item(value="7" title="七楼")
+        mu-menu-item(value="8" title="八楼")
+        mu-menu-item(value="9" title="九楼")
+        mu-menu-item(value="10" title="十楼")
+    mu-flexbox-item
       mu-flat-button(label="搜索" @click="search").w100
     mu-flexbox-item
       mu-flat-button(label="test" @click="test").w100
@@ -35,17 +48,6 @@ import 'muse-ui/dist/muse-ui.css'
 // import 'muse-ui/dist/theme-dark.css'
 store.commit('test')
 export default {
-  // data () {
-  //   return {
-  //     list: store.state.list,
-  //     jie: store.state.jie,
-  //     lou: store.state.lou,
-  //     ke: store.state.ke,
-  //     week: store.state.week,
-  //     xinqi: store.state.xinqi,
-  //     zhou: store.state.zhou
-  //   }
-  // },
   computed: {
     list () {
       return store.state.list
@@ -67,6 +69,12 @@ export default {
     },
     zhou () {
       return store.state.zhou
+    },
+    alldata () {
+      return store.state.data
+    },
+    ceng () {
+      return store.state.ceng
     }
   },
   methods: {
@@ -106,6 +114,10 @@ export default {
       console.log(zhou)
       console.log(week)
       // console.log(moment(week).day().toString())
+    },
+    cengchange (val) {
+      store.commit('cengchange', val)
+      console.log(val)
     }
   }
 }
@@ -115,7 +127,7 @@ export default {
 #control
   margin: 20px
   padding: 20px
-  height: 500px
+  height: auto
 .w100
   width: 100%
 </style>
